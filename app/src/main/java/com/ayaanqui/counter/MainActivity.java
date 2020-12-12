@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setCounterTextValue(int value) {
         TextView counterText = findViewById(R.id.counterText);
-        counterText.setText(counter);
+        counterText.setText(Integer.toString(counter));
         counter = value;
     }
 
@@ -22,11 +22,9 @@ public class MainActivity extends AppCompatActivity {
         counter = 0;
 
         final Button decrementButton = findViewById(R.id.decrementButton);
-        decrementButton.setOnClickListener(event -> {
-            setCounterTextValue(counter - 1);
-        });
+        decrementButton.setOnClickListener(e ->  setCounterTextValue(counter - 1));
 
         final Button incrementButton = findViewById(R.id.incrementButton);
-        incrementButton.setOnClickListener(event -> setCounterTextValue(counter + 1));
+        incrementButton.setOnClickListener(e -> setCounterTextValue(counter + 1));
     }
 }
