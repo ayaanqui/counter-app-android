@@ -9,7 +9,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private int counter = 0;
 
-    private void setCounterTextValue(int value) {
+    private synchronized void setCounterTextValue(int value) {
         TextView counterText = findViewById(R.id.counterText);
         counterText.setText(Integer.toString(counter));
         counter = value;
